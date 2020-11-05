@@ -273,8 +273,8 @@ void dcuckoo(uint32_t table_size, const unordered_set<uint32_t> &elements, const
     end = chrono::system_clock::now();
     duration = chrono::duration_cast<chrono::microseconds>(end - start);
     cout << "Query time: " << duration.count() << "us, " << (double)duration.count() / (elements.size() + negative_elements.size()) << "us per op" << endl;
-    cout << "true positive:" << true_positive << ';' << "false_positive:" << false_positive << endl;
-    cout << "false negative:" << false_negative << ';' << "true_negative:" << true_negative << endl;
+    cout << "true positive:" << true_positive << ';' << "false positive:" << false_positive << "; false positive rate = " << (double)false_positive / (false_positive + true_positive) << endl;
+    cout << "false negative:" << false_negative << ';' << "true negative:" << true_negative << "; false negative rate = " << (double)false_negative / (false_negative + true_negative) << endl;
     cout << endl;
 
 end:
@@ -289,6 +289,7 @@ void cuckoo(uint32_t table_size, const unordered_set<uint32_t> &elements, const 
 {
     assert(table_size - get_highest_1(table_size) == 0);
     uint8_t *cuckoo_buckets = new uint8_t[table_size * b];
+    memset(cuckoo_buckets, 0, table_size * b);
     cout << "Standard cuckoo: size = " << table_size << endl;
     // insert
     auto start = chrono::system_clock::now();
@@ -347,8 +348,8 @@ void cuckoo(uint32_t table_size, const unordered_set<uint32_t> &elements, const 
     end = chrono::system_clock::now();
     duration = chrono::duration_cast<chrono::microseconds>(end - start);
     cout << "Query time: " << duration.count() << "us, " << (double)duration.count() / (elements.size() + negative_elements.size()) << "us per op" << endl;
-    cout << "true positive:" << true_positive << ';' << "false_positive:" << false_positive << endl;
-    cout << "false negative:" << false_negative << ';' << "true_negative:" << true_negative << endl;
+    cout << "true positive:" << true_positive << ';' << "false positive:" << false_positive << "; false positive rate = " << (double)false_positive / (false_positive + true_positive) << endl;
+    cout << "false negative:" << false_negative << ';' << "true negative:" << true_negative << "; false negative rate = " << (double)false_negative / (false_negative + true_negative) << endl;
     cout << endl;
 
     delete[] cuckoo_buckets;
@@ -356,57 +357,66 @@ void cuckoo(uint32_t table_size, const unordered_set<uint32_t> &elements, const 
 
 int main()
 {
-    const uint32_t dcuckoo_size = 0xfffff;
-    const uint32_t cuckoo_size = get_highest_1(dcuckoo_size) << 1;
-    const double loading_factor = 0.5;
-    const uint32_t delement_number = dcuckoo_size * loading_factor * b;
-    const uint32_t element_number = cuckoo_size * loading_factor * b;
-    unordered_set<uint32_t> elements;
-    unordered_set<uint32_t> negative_elements;
+    // const uint32_t dcuckoo_size = 0x3fffff;
+    uint32_t dcuckoo_size = 0x200000;
+    uint32_t num_1 = 1;
+    const double loading_factor = 0.95;
 
-    while (elements.size() < delement_number)
+    while (dcuckoo_size <= 0x3fffff)
     {
-        uint32_t element = data_distribution(generator);
-        uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
-        fp = fp & 0xff;
-        if (fp != 0)
-        {
-            elements.insert(element);
-        }
-    }
-    while (negative_elements.size() < delement_number)
-    {
-        uint32_t element = data_distribution(generator);
-        uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
-        fp = fp & 0xff;
-        if (fp != 0 && elements.find(element) == elements.end())
-        {
-            negative_elements.insert(element);
-        }
-    }
-    dcuckoo(dcuckoo_size, elements, negative_elements);
+        cout << "Dcuckoo size = " << dcuckoo_size << ", num of 1 = " << num_1 << endl;
+        uint32_t cuckoo_size = get_highest_1(dcuckoo_size - 1) << 1;
+        const uint32_t delement_number = dcuckoo_size * loading_factor * b;
+        const uint32_t element_number = cuckoo_size * loading_factor * b;
+        unordered_set<uint32_t> elements;
+        unordered_set<uint32_t> negative_elements;
 
-    while (elements.size() < element_number)
-    {
-        uint32_t element = data_distribution(generator);
-        uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
-        fp = fp & 0xff;
-        if (fp != 0)
+        while (elements.size() < delement_number)
         {
-            elements.insert(element);
+            uint32_t element = data_distribution(generator);
+            uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
+            fp = fp & 0xff;
+            if (fp != 0)
+            {
+                elements.insert(element);
+            }
         }
-    }
-    while (negative_elements.size() < element_number)
-    {
-        uint32_t element = data_distribution(generator);
-        uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
-        fp = fp & 0xff;
-        if (fp != 0 && elements.find(element) == elements.end())
+        while (negative_elements.size() < delement_number)
         {
-            negative_elements.insert(element);
+            uint32_t element = data_distribution(generator);
+            uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
+            fp = fp & 0xff;
+            if (fp != 0 && elements.find(element) == elements.end())
+            {
+                negative_elements.insert(element);
+            }
         }
-    }
-    cuckoo(cuckoo_size, elements, negative_elements);
+        dcuckoo(dcuckoo_size, elements, negative_elements);
 
+        while (elements.size() < element_number)
+        {
+            uint32_t element = data_distribution(generator);
+            uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
+            fp = fp & 0xff;
+            if (fp != 0)
+            {
+                elements.insert(element);
+            }
+        }
+        while (negative_elements.size() < element_number)
+        {
+            uint32_t element = data_distribution(generator);
+            uint32_t fp = murmur3_32((const uint8_t *)&element, sizeof(element), fp_seed);
+            fp = fp & 0xff;
+            if (fp != 0 && elements.find(element) == elements.end())
+            {
+                negative_elements.insert(element);
+            }
+        }
+        cuckoo(cuckoo_size, elements, negative_elements);
+
+        dcuckoo_size += (1 << (num_1 - 1));
+        num_1++;
+    }
     return 0;
 }

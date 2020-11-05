@@ -1,0 +1,286 @@
+Dcuckoo size = 2097152, num of 1 = 1
+Divided cuckoo: size = 2097152
+Insert time: 1717562us, 0.215526us per op
+Query time: 1700806us, 0.106712us per op
+true positive:7967021;false positive:234058; false positive rate = 0.0285399
+false negative:2156;true negative:7735119; false negative rate = 0.000278651
+
+Standard cuckoo: size = 2097152
+Insert time: 1707726us, 0.214291us per op
+Query time: 1654312us, 0.103794us per op
+true positive:7966965;false positive:234050; false positive rate = 0.0285392
+false negative:2212;true negative:7735127; false negative rate = 0.000285886
+
+Dcuckoo size = 2097153, num of 1 = 2
+Divided cuckoo: size = 2097153
+Insert time: 1730450us, 0.217143us per op
+Query time: 1691038us, 0.106099us per op
+true positive:7967037;false positive:234837; false positive rate = 0.0286321
+false negative:2144;true negative:7734344; false negative rate = 0.000277128
+
+Standard cuckoo: size = 4194304
+Insert time: 4128396us, 0.259023us per op
+Query time: 3770795us, 0.118293us per op
+true positive:15934054;false positive:467755; false positive rate = 0.0285185
+false negative:4301;true negative:15470600; false negative rate = 0.000277934
+
+Dcuckoo size = 2097155, num of 1 = 3
+Divided cuckoo: size = 2097155
+Insert time: 1719832us, 0.21581us per op
+Query time: 1747664us, 0.109651us per op
+true positive:7967076;false positive:233745; false positive rate = 0.0285026
+false negative:2113;true negative:7735444; false negative rate = 0.000273084
+
+Standard cuckoo: size = 4194304
+Insert time: 4127853us, 0.258989us per op
+Query time: 3825880us, 0.120021us per op
+true positive:15934022;false positive:467343; false positive rate = 0.0284942
+false negative:4333;true negative:15471012; false negative rate = 0.000279994
+
+Dcuckoo size = 2097159, num of 1 = 4
+Divided cuckoo: size = 2097159
+Insert time: 1726901us, 0.216697us per op
+Query time: 1706657us, 0.107078us per op
+true positive:7967048;false positive:234279; false positive rate = 0.028566
+false negative:2156;true negative:7734925; false negative rate = 0.000278658
+
+Standard cuckoo: size = 4194304
+Insert time: 4128795us, 0.259048us per op
+Query time: 3805934us, 0.119395us per op
+true positive:15934077;false positive:468208; false positive rate = 0.0285453
+false negative:4278;true negative:15470147; false negative rate = 0.000276456
+
+Dcuckoo size = 2097167, num of 1 = 5
+Divided cuckoo: size = 2097167
+Insert time: 1708832us, 0.214429us per op
+Query time: 1695993us, 0.106409us per op
+true positive:7967108;false positive:235060; false positive rate = 0.0286583
+false negative:2126;true negative:7734174; false negative rate = 0.000274808
+
+Standard cuckoo: size = 4194304
+Insert time: 4121641us, 0.258599us per op
+Query time: 3803520us, 0.11932us per op
+true positive:15934088;false positive:466738; false positive rate = 0.0284582
+false negative:4267;true negative:15471617; false negative rate = 0.000275719
+
+Dcuckoo size = 2097183, num of 1 = 6
+Divided cuckoo: size = 2097183
+Insert time: 1699100us, 0.213206us per op
+Query time: 1703052us, 0.106851us per op
+true positive:7967169;false positive:233105; false positive rate = 0.0284265
+false negative:2126;true negative:7736190; false negative rate = 0.000274737
+
+Standard cuckoo: size = 4194304
+Insert time: 4176125us, 0.262017us per op
+Query time: 3782902us, 0.118673us per op
+true positive:15933956;false positive:467152; false positive rate = 0.028483
+false negative:4399;true negative:15471203; false negative rate = 0.000284254
+
+Dcuckoo size = 2097215, num of 1 = 7
+Divided cuckoo: size = 2097215
+Insert time: 1688846us, 0.211916us per op
+Query time: 1729845us, 0.10853us per op
+true positive:7967274;false positive:233709; false positive rate = 0.0284977
+false negative:2143;true negative:7735708; false negative rate = 0.00027695
+
+Standard cuckoo: size = 4194304
+Insert time: 4095912us, 0.256985us per op
+Query time: 3794623us, 0.119041us per op
+true positive:15934004;false positive:467037; false positive rate = 0.0284761
+false negative:4351;true negative:15471318; false negative rate = 0.000281151
+
+Dcuckoo size = 2097279, num of 1 = 8
+Divided cuckoo: size = 2097279
+Insert time: 1710729us, 0.214655us per op
+Query time: 1707123us, 0.107101us per op
+true positive:7967464;false positive:233853; false positive rate = 0.0285141
+false negative:2196;true negative:7735807; false negative rate = 0.000283794
+
+Standard cuckoo: size = 4194304
+Insert time: 4126919us, 0.25893us per op
+Query time: 3780617us, 0.118601us per op
+true positive:15934097;false positive:467957; false positive rate = 0.0285304
+false negative:4258;true negative:15470398; false negative rate = 0.00027516
+
+Dcuckoo size = 2097407, num of 1 = 9
+Divided cuckoo: size = 2097407
+Insert time: 1701033us, 0.213426us per op
+Query time: 1698689us, 0.106566us per op
+true positive:7967915;false positive:233606; false positive rate = 0.0284833
+false negative:2231;true negative:7736540; false negative rate = 0.000288289
+
+Standard cuckoo: size = 4194304
+Insert time: 4075887us, 0.255728us per op
+Query time: 3805256us, 0.119374us per op
+true positive:15934097;false positive:467517; false positive rate = 0.0285043
+false negative:4258;true negative:15470838; false negative rate = 0.000275152
+
+Dcuckoo size = 2097663, num of 1 = 10
+Divided cuckoo: size = 2097663
+Insert time: 1704101us, 0.213784us per op
+Query time: 1685425us, 0.105721us per op
+true positive:7968951;false positive:234213; false positive rate = 0.0285515
+false negative:2168;true negative:7736906; false negative rate = 0.000280137
+
+Standard cuckoo: size = 4194304
+Insert time: 4103499us, 0.257461us per op
+Query time: 3796260us, 0.119092us per op
+true positive:15934045;false positive:468828; false positive rate = 0.0285821
+false negative:4310;true negative:15469527; false negative rate = 0.000278535
+
+Dcuckoo size = 2098175, num of 1 = 11
+Divided cuckoo: size = 2098175
+Insert time: 1734307us, 0.217521us per op
+Query time: 1709020us, 0.107175us per op
+true positive:7970890;false positive:234114; false positive rate = 0.0285331
+false negative:2175;true negative:7738951; false negative rate = 0.000280967
+
+Standard cuckoo: size = 4194304
+Insert time: 4094050us, 0.256868us per op
+Query time: 3866541us, 0.121297us per op
+true positive:15934119;false positive:469424; false positive rate = 0.0286172
+false negative:4236;true negative:15468931; false negative rate = 0.000273764
+
+Dcuckoo size = 2099199, num of 1 = 12
+Divided cuckoo: size = 2099199
+Insert time: 1742515us, 0.218444us per op
+Query time: 1693927us, 0.106176us per op
+true positive:7974727;false positive:234330; false positive rate = 0.0285453
+false negative:2229;true negative:7742626; false negative rate = 0.000287804
+
+Standard cuckoo: size = 4194304
+Insert time: 4107099us, 0.257687us per op
+Query time: 3798250us, 0.119154us per op
+true positive:15934086;false positive:467154; false positive rate = 0.0284828
+false negative:4269;true negative:15471201; false negative rate = 0.000275856
+
+Dcuckoo size = 2101247, num of 1 = 13
+Divided cuckoo: size = 2101247
+Insert time: 1708026us, 0.213911us per op
+Query time: 1694471us, 0.106107us per op
+true positive:7982605;false positive:234131; false positive rate = 0.0284944
+false negative:2133;true negative:7750607; false negative rate = 0.000275129
+
+Standard cuckoo: size = 4194304
+Insert time: 4240662us, 0.266066us per op
+Query time: 3792374us, 0.11897us per op
+true positive:15934058;false positive:467647; false positive rate = 0.0285121
+false negative:4297;true negative:15470708; false negative rate = 0.000277674
+
+Dcuckoo size = 2105343, num of 1 = 14
+Divided cuckoo: size = 2105343
+Insert time: 1735754us, 0.216961us per op
+Query time: 1727852us, 0.107987us per op
+true positive:7998141;false positive:235148; false positive rate = 0.0285606
+false negative:2162;true negative:7765155; false negative rate = 0.000278346
+
+Standard cuckoo: size = 4194304
+Insert time: 4161431us, 0.261095us per op
+Query time: 3842279us, 0.120536us per op
+true positive:15934115;false positive:467860; false positive rate = 0.0285246
+false negative:4240;true negative:15470495; false negative rate = 0.000273995
+
+Dcuckoo size = 2113535, num of 1 = 15
+Divided cuckoo: size = 2113535
+Insert time: 1734205us, 0.215927us per op
+Query time: 1745713us, 0.10868us per op
+true positive:8029229;false positive:235820; false positive rate = 0.0285322
+false negative:2204;true negative:7795613; false negative rate = 0.000282643
+
+Standard cuckoo: size = 4194304
+Insert time: 4182434us, 0.262413us per op
+Query time: 3847925us, 0.120713us per op
+true positive:15933979;false positive:467144; false positive rate = 0.0284824
+false negative:4376;true negative:15471211; false negative rate = 0.000282768
+
+Dcuckoo size = 2129919, num of 1 = 16
+Divided cuckoo: size = 2129919
+Insert time: 1778320us, 0.219717us per op
+Query time: 1747215us, 0.107937us per op
+true positive:8091352;false positive:237692; false positive rate = 0.0285377
+false negative:2340;true negative:7856000; false negative rate = 0.000297773
+
+Standard cuckoo: size = 4194304
+Insert time: 4124932us, 0.258805us per op
+Query time: 3873445us, 0.121513us per op
+true positive:15934085;false positive:468331; false positive rate = 0.0285526
+false negative:4270;true negative:15470024; false negative rate = 0.000275942
+
+Dcuckoo size = 2162687, num of 1 = 17
+Divided cuckoo: size = 2162687
+Insert time: 1795004us, 0.218418us per op
+Query time: 1780749us, 0.108342us per op
+true positive:8215937;false positive:241560; false positive rate = 0.0285616
+false negative:2273;true negative:7976650; false negative rate = 0.000284876
+
+Standard cuckoo: size = 4194304
+Insert time: 4091677us, 0.256719us per op
+Query time: 3807036us, 0.11943us per op
+true positive:15934105;false positive:467220; false positive rate = 0.0284867
+false negative:4250;true negative:15471135; false negative rate = 0.00027463
+
+Dcuckoo size = 2228223, num of 1 = 18
+Divided cuckoo: size = 2228223
+Insert time: 1870979us, 0.220967us per op
+Query time: 1862659us, 0.109992us per op
+true positive:8464887;false positive:247680; false positive rate = 0.0284279
+false negative:2360;true negative:8219567; false negative rate = 0.000287037
+
+Standard cuckoo: size = 4194304
+Insert time: 4102338us, 0.257388us per op
+Query time: 3818727us, 0.119797us per op
+true positive:15934109;false positive:467380; false positive rate = 0.0284962
+false negative:4246;true negative:15470975; false negative rate = 0.000274374
+
+Dcuckoo size = 2359295, num of 1 = 19
+Divided cuckoo: size = 2359295
+Insert time: 2151546us, 0.239985us per op
+Query time: 2302243us, 0.128397us per op
+true positive:8962790;false positive:262850; false positive rate = 0.0284912
+false negative:2531;true negative:8702471; false negative rate = 0.000290752
+
+Standard cuckoo: size = 4194304
+Insert time: 4096770us, 0.257038us per op
+Query time: 3799116us, 0.119182us per op
+true positive:15934064;false positive:468258; false positive rate = 0.0285483
+false negative:4291;true negative:15470097; false negative rate = 0.000277297
+
+Dcuckoo size = 2621439, num of 1 = 20
+Divided cuckoo: size = 2621439
+Insert time: 2383159us, 0.239238us per op
+Query time: 2411609us, 0.121047us per op
+true positive:9958674;false positive:292322; false positive rate = 0.0285164
+false negative:2794;true negative:9669146; false negative rate = 0.000288877
+
+Standard cuckoo: size = 4194304
+Insert time: 4134808us, 0.259425us per op
+Query time: 3798255us, 0.119155us per op
+true positive:15934110;false positive:469627; false positive rate = 0.0286293
+false negative:4245;true negative:15468728; false negative rate = 0.000274349
+
+Dcuckoo size = 3145727, num of 1 = 21
+Divided cuckoo: size = 3145727
+Insert time: 2898707us, 0.242493us per op
+Query time: 2983736us, 0.124803us per op
+true positive:11950460;false positive:350033; false positive rate = 0.0284568
+false negative:3302;true negative:11603729; false negative rate = 0.000284483
+
+Standard cuckoo: size = 4194304
+Insert time: 4130568us, 0.259159us per op
+Query time: 3793777us, 0.119014us per op
+true positive:15933908;false positive:468637; false positive rate = 0.028571
+false negative:4447;true negative:15469718; false negative rate = 0.000287382
+
+Dcuckoo size = 4194303, num of 1 = 22
+Divided cuckoo: size = 4194303
+Insert time: 4003292us, 0.251174us per op
+Query time: 4269164us, 0.133927us per op
+true positive:15934006;false positive:467938; false positive rate = 0.0285294
+false negative:4345;true negative:15470413; false negative rate = 0.00028078
+
+Standard cuckoo: size = 4194304
+Insert time: 4108514us, 0.257775us per op
+Query time: 3781230us, 0.11862us per op
+true positive:15934023;false positive:467627; false positive rate = 0.028511
+false negative:4332;true negative:15470728; false negative rate = 0.000279934
+
